@@ -10,32 +10,25 @@ request.onload = function () {
 
     if (request.status >= 200 && request.status < 400) {
         data.forEach(movie => {
-            // Create a div with a "Column 4" class
-            const column4 = document.createElement('div')
-            column4.setAttribute('class', 'column-4')
-
-            // Create a div with a "Card" class
+            // Create a div with a "Sample Card" class
             const card = document.createElement('div')
-            card.setAttribute('class', 'card')
+            card.setAttribute('class', 'sample-card')
 
-            // Create an h2 and set the text content to the film's title
-            const h2 = document.createElement('h2')
-            h2.textContent = movie.title
+            // Create an h3 and set the text content to the film's title
+            const h3 = document.createElement('h3')
+            h3.textContent = movie.title
 
             // Create a p and set the text content to the film's description
             const p = document.createElement('p')
-            movie.description = movie.description.substring(0, 300) // Limit to 300 chars
+            movie.description = movie.description.substring(0, 120) // Limit to 120 chars
             p.textContent = `${movie.description}...` // End with an ellipses
 
-            // Append h2 and p to the card element
-            card.appendChild(h2)
+            // Append h3 and p to the card element
+            card.appendChild(h3)
             card.appendChild(p)
 
-            // Append the card to the column element
-            column4.appendChild(card)
-
-            // Append the column to the cards container element
-            document.getElementById("cardsContainer").appendChild(column4);
+            // Append the card to the div with "Column 12" class
+            document.getElementById("Cards-Container").appendChild(card);
         })
     } else {
         console.log('error')
