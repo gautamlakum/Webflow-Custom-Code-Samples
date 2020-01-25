@@ -27,7 +27,7 @@ request.onload = function () {
             card.appendChild(h3)
             card.appendChild(p)
 
-            // Append the card to the div with "Column 12" class
+            // Append the card to the div with "Cards-Container" id
             document.getElementById("Cards-Container").appendChild(card);
         })
     } else {
